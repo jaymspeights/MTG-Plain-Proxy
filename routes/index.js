@@ -1,9 +1,20 @@
 var express = require('express');
 var router = express.Router();
+var card_engine = require('../card_engine');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', (req, res) => {
+  res.render('index');
+});
+
+router.post('/proxy', (req, res) => {
+  card_engine.getCards(JSON.parse(req.body.cards), (cards, err) => {
+    if (err) {
+      res.send(err);
+      return;
+    }
+    res.render('result', {'cards':cards});
+  });
 });
 
 module.exports = router;

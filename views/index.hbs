@@ -1,2 +1,23 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="center">
+  <textarea id="cards_area" placeholder="Add your list of cards here. e.g.&#10;4 Arbor Elf&#10;12 Forest&#10;4 Grizzly Bears&#10;..."></textarea>
+  <button type="button" id='create_button'>Create Deck</button>
+</div>
+<script>
+var re = /^(\d+)[x]?\s+(.+?)\s*$/;
+  $("#create_button").click(()=>{
+    var val = $("#cards_area").val().split('\n');
+    data = [];
+    for (var i = 0; i < val.length; i++){
+        var line = re.exec(val[i]);
+        if (line == null || line.length < 3){
+          alert('Error parsing input ' + val[i] + '.\nPlease use the format: \n(Amount) (Name)')
+          return;
+        }
+        data.push({'amount':parseInt(line[1]), 'name':line[2]});
+    }
+    $.post('/proxy', {'cards':JSON.stringify(data)}, (res, err) => {
+      $('body').html(res);
+    });
+
+  });
+</script>

@@ -1,0 +1,26 @@
+<div class='container'>
+  {{#each cards}}
+    <div class='card'>
+    {{#if land}}
+    {{else}}
+      <div class='header'>
+        <p class='.mana-cost'>{{manaCost}}</p>
+      </div>
+    {{/if}}
+      <div class="namebox">
+        <p class='name'>{{name}}</p>
+      </div>
+      <div class="typebox">
+        <p class='.type'>{{type}}</p>
+      </div>
+        <p class='.text'>{{text}}</p>
+      <div class='textbox'>
+      </div>
+      {{#if power}}
+        <div class='footer'>
+          <p class='.pt'>{{power}}/{{toughness}}</p>
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+</div>

@@ -1,8 +1,22 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+#cards_area {
+  width: 100%;
+  height: 500px;
+  display: block;
 }
-
-a {
-  color: #00B7FF;
+#create_button {
+  display: block;
+}
+.center {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 35%;
+}
+.card {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 3px solid black;
+  width:230px;
+  height:321px;
+  float: left;
 }
