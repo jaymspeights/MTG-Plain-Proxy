@@ -2,19 +2,18 @@
   {{#each cards}}
     <div class='card'>
       <div class='header'>
-        {{#if land}}
-        {{else}}
+        {{#if manaCost}}
           <p class='mana-cost'>{{manaCost}}</p>
         {{/if}}
     </div>
       <div class="namebox">
-        <p class='name'>{{name}}</p>
+        <p class='name sizeable'>{{name}}</p>
       </div>
       <div class="typebox">
-        <p class='type'>{{type}}</p>
+        <p class='type sizeable'>{{type}}</p>
       </div>
       <div class='textbox'>
-        <p class='text'>{{text}}</p>
+        <p class='text sizeable'>{{text}}</p>
       </div>
       <div class="footerbox">
         {{#if power}}

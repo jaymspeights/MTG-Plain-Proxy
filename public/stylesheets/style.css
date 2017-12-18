@@ -13,9 +13,9 @@
 }
 .card {
   box-sizing: border-box;
-  padding: 3px;
-  margin: 0;
-  border: 3px solid black;
+  padding: 4px;
+  margin: -1px;
+  border: 1px dashed gray;
   width:230px;
   height:321px;
   float: left;
@@ -23,6 +23,7 @@
 .card div {
   border: 1px solid black;
   box-sizing: border-box;
+  padding: 0 3px;
 }
 .card div p,pre {
   margin: auto;
@@ -39,6 +40,9 @@
   width: 100%;
   height: 35%;
   font-size: 2em;
+}
+.namebox .name {
+  text-align: center;
 }
 .typebox {
   width: 100%;
@@ -59,4 +63,6 @@
 }
 .footerbox p {
   text-align: right;
+  font-size: 27px;
+  box-sizing: border-box;
 }
