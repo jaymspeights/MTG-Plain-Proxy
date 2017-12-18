@@ -55,7 +55,7 @@ engine.getCards = function (data, callback) {
         return;
       }
       var card = {'name': data.name, 'power':data.power, 'toughness':data.toughness,
-          'type':data.type, 'manaCost':data.manaCost, 'text':data.text}
+          'type':data.type, 'manaCost':data.manaCost, 'text':data.text, 'loyalty': data.loyalty}
       for (var i = 0; i < data.types.length; i++)
         if (data.types[i] == "Land")
           card.land = true;

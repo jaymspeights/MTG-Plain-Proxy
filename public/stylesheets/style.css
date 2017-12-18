@@ -13,10 +13,50 @@
 }
 .card {
   box-sizing: border-box;
-  padding: 0;
+  padding: 3px;
   margin: 0;
   border: 3px solid black;
   width:230px;
   height:321px;
   float: left;
+}
+.card div {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+.card div p,pre {
+  margin: auto;
+  white-space: pre-wrap;
+}
+.header {
+  width: 100%;
+  height: 7.5%;
+}
+.header p {
+  text-align: right;
+}
+.namebox {
+  width: 100%;
+  height: 35%;
+  font-size: 2em;
+}
+.typebox {
+  width: 100%;
+  height: 7.5%;
+}
+.textbox {
+  width: 100%;
+  height: 40%;
+}
+.textbox p {
+  display: inline;
+  margin: 0;
+  float: left;
+}
+.footerbox {
+  width: 100%;
+  height: 10%;
+}
+.footerbox p {
+  text-align: right;
 }
