@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 router.post('/proxy', (req, res) => {
   card_engine.getCards(JSON.parse(req.body.cards), (cards, err) => {
     if (err) {
-      res.send(err);
+      res.status(400).send(err);
       return;
     }
     res.render('result', {'cards':cards});

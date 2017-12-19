@@ -1,6 +1,6 @@
 #cards_area {
   width: 100%;
-  height: 500px;
+  height: 300px;
   display: block;
 }
 #create_button {
@@ -19,6 +19,7 @@
   width:230px;
   height:321px;
   float: left;
+  page-break-inside: avoid;
 }
 .card div {
   border: 1px solid black;

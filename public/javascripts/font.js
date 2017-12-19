@@ -4,7 +4,6 @@ $(() => {
   });
   var start = new Date().getTime();
   $('.sizeable').each((i, li) => {
-    //console.log('start', i,new Date().getTime()-start)
     var default_size = $(li).css('font-size');
     var font_size = parseInt(default_size);
     console.log($(li).text(), font_size)
@@ -19,6 +18,5 @@ $(() => {
         break;
       }
     }
-    //console.log('done', i ,new Date().getTime()-start)
   });
 });
