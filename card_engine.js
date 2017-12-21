@@ -45,6 +45,7 @@ engine.getCards = function (data, callback) {
   }
   if (num > 999) {
     callback(null, 'Woah, thats a lot of cards! Try printing less at once.')
+    return;
   }
   for (var i = 0; i < data.length; i++) {
     var name = data[i].name.toLowerCase();
