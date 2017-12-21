@@ -1,4 +1,5 @@
 <div class="center">
+  <h2>Plain Proxy</h2>
   <textarea id="cards_area" placeholder="Add your list of cards here. e.g.&#10;4 Arbor Elf&#10;12 Forest&#10;4 Grizzly Bears&#10;..."></textarea>
   <button type="button" id='create_button'>Create Deck</button>
 </div>
@@ -19,6 +20,7 @@ var blank = /^\s*$/;
     }
     $.post('/proxy', {'cards':JSON.stringify(data)})
         .done((res) => {
+          window.history.pushState({'name': 'Poor Proxy'}, 'index', '/');
           $('body').html(res);
         })
         .fail((xhr, status, err) => {

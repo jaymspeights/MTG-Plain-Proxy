@@ -1,3 +1,10 @@
+<script>
+if(!!window.performance && window.performance.navigation.type === 2)
+{
+    console.log('Reloading');
+    window.location.reload();
+}
+</script>
 <div class='container'>
   {{#each cards}}
     <div class='card'>
