@@ -5,11 +5,16 @@
 }
 #create_button {
   display: block;
+  padding: 5px;
+  margin: auto;
+  margin-top: 10px;
 }
 .center {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0 35%;
+  width: 400px;
+  margin: auto;
+}
+.center p, h1 {
+  text-align: center;
 }
 .card {
   box-sizing: border-box;

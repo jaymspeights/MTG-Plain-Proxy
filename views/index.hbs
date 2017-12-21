@@ -1,12 +1,12 @@
 <div class="center">
   <h1>Plain Proxy</h1>
-  <p>Make printer friendly proxies</p>
-  <textarea id="cards_area" placeholder="Add your list of cards here. e.g.&#10;4 Arbor Elf&#10;12 Forest&#10;4 Grizzly Bears&#10;..."></textarea>
+  <p>Make printer friendly proxies for Magic: The Gathering</p>
+  <textarea id="cards_area" placeholder="Add your list of cards here. e.g.&#10;&#10;4 Arbor Elf&#10;12 Forest&#10;4 Grizzly Bears&#10;.&#10;.&#10;."></textarea>
   <button type="button" id='create_button'>Create Deck</button>
 </div>
 <script>
-var re = /^(\d+)[x]?\s+(.+?)\s*$/;
-var blank = /^\s*$/;
+  var re = /^(\d+)[x]?\s+(.+?)\s*$/;
+  var blank = /^\s*$/;
   $("#create_button").click(()=>{
     var val = $("#cards_area").val().split('\n');
     data = [];
