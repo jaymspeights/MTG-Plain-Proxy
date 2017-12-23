@@ -2,6 +2,8 @@ const mtg = require('mtgsdk');
 var cards_col;
 var engine = {};
 
+engine.cards_proxied = 0;
+
 var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://localhost:27017';
 MongoClient.connect(url, (err, client) => {
@@ -64,6 +66,7 @@ engine.getCards = function (data, callback) {
         cards.push(card);
       }
       if (cards.length >= num) {
+        engine.cards_proxied += cards.length;
         callback(cards);
       }
     }

@@ -4,7 +4,7 @@ var card_engine = require('../card_engine');
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', {'cards_proxied': card_engine.cards_proxied});
 });
 
 router.post('/proxy', (req, res) => {
