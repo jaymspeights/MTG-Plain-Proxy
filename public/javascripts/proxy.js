@@ -12,7 +12,7 @@ $("#create_button").click(()=>{
     }
     data.push({'amount':parseInt(line[1]), 'name':line[2]});
   }
-  $.post('/proxy', {'cards':JSON.stringify(data)})
+  $.post('/PlainProxy/proxy', {'cards':JSON.stringify(data)})
       .done((res) => {
         window.history.pushState({'name': 'Poor Proxy'}, 'index', '/');
         $('body').html(res);
