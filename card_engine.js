@@ -4,34 +4,34 @@ var engine = {};
 
 engine.cards_proxied = 0;
 
-var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017';
-MongoClient.connect(url, (err, client) => {
-  if (err)  throw err;
-  cards_col = client.db('MTG-Proxy').collection('cards');
-});
+// var MongoClient = require('mongodb').MongoClient;
+// var url = 'mongodb://localhost:27017';
+// MongoClient.connect(url, (err, client) => {
+//   if (err)  throw err;
+//   cards_col = client.db('MTG-Proxy').collection('cards');
+// });
 
 function getCardData(name, callback) {
-  cards_col.findOne({'name':name}, (err, result) => {
-    if (err) throw err;
-    if (result == null) {
-      mtg.card.where({'name': '"'+name+'"'})
+  // cards_col.findOne({'name':name}, (err, result) => {
+    // if (err) throw err;
+    // if (result == null) {
+      mtg.card.where({'name': name})
       .then(results => {
         if (results.length == 0) {
           callback(null, name + ' not found.')
           return;
         }
-        cards_col.findOne({'name':name}, (err, result) => {
-          if (result==null)
-            cards_col.insertOne({'name':name, 'data':results[0]});
-        });
+        // cards_col.findOne({'name':name}, (err, result) => {
+        //   if (result==null)
+        //     cards_col.insertOne({'name':name, 'data':results[0]});
+        // });
         callback(results[0]);
       });
-    }
-    else {
-      callback(result.data);
-    }
-  });
+    // }
+    // else {
+    //   callback(result.data);
+    // }
+  // });
 }
 
 engine.getCards = function (data, callback) {
